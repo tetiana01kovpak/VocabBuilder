@@ -1,0 +1,36 @@
+:root {
+  --green: #85aa9f;
+  --green-hover: #a5c0b8;
+  --green-light: rgba(133, 170, 159, 0.1);
+  --black: #121417;
+  --black-80: rgba(18, 20, 23, 0.8);
+  --black-50: rgba(18, 20, 23, 0.5);
+  --black-20: rgba(18, 20, 23, 0.2);
+  --black-10: rgba(18, 20, 23, 0.1);
+  --white: #fcfcfc;
+  --bg: #f8f8f8;
+  --error: #d80027;
+  --success: #3cbf61;
+
+  --radius-input: 15px;
+  --radius-btn: 30px;
+  --radius-card: 30px;
+
+  --header-h: 88px;
+  --container: 1440px;
+  --container-pad: 100px;
+}
+
+@media (max-width: 1439px) {
+  :root {
+    --container-pad: 32px;
+    --header-h: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --container-pad: 16px;
+    --header-h: 64px;
+  }
+}
