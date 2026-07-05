@@ -1,0 +1,43 @@
+.header {
+  background: var(--white);
+  border-bottom: 1px solid rgba(18, 20, 23, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.inner {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.desktopNav {
+  display: none;
+}
+
+.desktopBar {
+  display: none;
+}
+
+.burger {
+  display: flex;
+  color: var(--black);
+}
+
+@media (min-width: 1440px) {
+  .desktopNav {
+    display: block;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .desktopBar {
+    display: block;
+  }
+  .burger {
+    display: none;
+  }
+}

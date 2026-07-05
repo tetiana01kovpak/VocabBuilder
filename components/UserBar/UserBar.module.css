@@ -1,0 +1,57 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.name,
+.nameLight {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nameLight {
+  color: var(--white);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+.avatarIcon {
+  color: var(--white);
+}
+
+.logout,
+.logoutLight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.logout {
+  color: var(--black);
+}
+
+.logout:hover {
+  color: var(--green);
+}
+
+.logoutLight {
+  color: var(--white);
+}
+
+@media (max-width: 767px) {
+  .name {
+    display: none;
+  }
+}
