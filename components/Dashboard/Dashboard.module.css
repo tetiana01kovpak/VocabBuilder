@@ -1,0 +1,44 @@
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.addBtn,
+.train {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: var(--black);
+  transition: color 0.2s ease;
+}
+
+.addBtn:hover,
+.train:hover {
+  color: var(--green);
+}
+
+.plus,
+.arrow {
+  color: var(--green);
+}
+
+@media (max-width: 767px) {
+  .dashboard {
+    padding: 24px 0;
+  }
+  .actions {
+    gap: 16px;
+  }
+}

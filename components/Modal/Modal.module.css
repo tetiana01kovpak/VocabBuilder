@@ -1,0 +1,48 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 20, 23, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 60;
+  overflow-y: auto;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 628px;
+  border-radius: var(--radius-card);
+  padding: 50px;
+}
+
+.light {
+  background: var(--white);
+}
+
+.green {
+  background: var(--green);
+  color: var(--white);
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.close:hover {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 767px) {
+  .modal {
+    padding: 40px 20px;
+    border-radius: 20px;
+  }
+}

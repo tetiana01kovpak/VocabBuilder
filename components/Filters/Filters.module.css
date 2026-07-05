@@ -1,0 +1,95 @@
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.searchWrap {
+  position: relative;
+  width: 274px;
+  max-width: 100%;
+}
+
+.search {
+  width: 100%;
+  height: 56px;
+  padding: 0 44px 0 18px;
+  border: 1px solid var(--black-10);
+  border-radius: var(--radius-input);
+  background: transparent;
+  font-size: 16px;
+  color: var(--black);
+  outline: none;
+}
+
+.search::placeholder {
+  color: var(--black);
+}
+
+.search:focus {
+  border-color: var(--green);
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  color: var(--black);
+  pointer-events: none;
+}
+
+.select {
+  width: 164px;
+}
+
+.radios {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 8px;
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.radio input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--black-20);
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.radio input:checked + .dot {
+  border-color: var(--green);
+}
+
+.radio input:checked + .dot::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+@media (max-width: 767px) {
+  .searchWrap,
+  .select {
+    width: 100%;
+  }
+}

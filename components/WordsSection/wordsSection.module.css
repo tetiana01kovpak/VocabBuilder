@@ -1,0 +1,16 @@
+.page {
+  padding-bottom: 40px;
+}
+
+.empty {
+  padding: 60px 0;
+  text-align: center;
+  font-size: 18px;
+  color: var(--black-50);
+}
+
+.loading {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--black-50);
+}
