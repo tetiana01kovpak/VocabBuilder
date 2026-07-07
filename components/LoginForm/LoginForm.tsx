@@ -9,6 +9,7 @@ import { useAppDispatch } from '@/redux/hooks';
 import { logIn } from '@/redux/auth/operations';
 import { loginSchema } from '@/lib/validation';
 import PasswordInput from '@/components/PasswordInput/PasswordInput';
+import Icon from '@/components/ui/Icon';
 import styles from '@/components/AuthLayout/authForm.module.css';
 
 export default function LoginForm() {
@@ -30,6 +31,8 @@ export default function LoginForm() {
   });
 
   const err = (f: 'email' | 'password') => formik.touched[f] && formik.errors[f];
+  const ok = (f: 'email' | 'password') =>
+    formik.touched[f] && !formik.errors[f];
 
   return (
     <div>
@@ -40,13 +43,26 @@ export default function LoginForm() {
       <form className={styles.form} onSubmit={formik.handleSubmit} noValidate>
         <div className={styles.field}>
           <input
-            className={clsx(styles.input, err('email') && styles.inputError)}
+            className={clsx(
+              styles.input,
+              err('email') && styles.inputError,
+              ok('email') && styles.inputSuccess
+            )}
             type="email"
             placeholder="Email"
             {...formik.getFieldProps('email')}
           />
           {err('email') && (
-            <span className={styles.error}>{formik.errors.email}</span>
+            <span className={styles.error}>
+              <Icon name="error" size={16} />
+              {formik.errors.email}
+            </span>
+          )}
+          {ok('email') && (
+            <span className={styles.success}>
+              <Icon name="success" size={16} />
+              Success email
+            </span>
           )}
         </div>
 
@@ -55,11 +71,21 @@ export default function LoginForm() {
             name="password"
             value={formik.values.password}
             hasError={!!err('password')}
+            success={!!ok('password')}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />
           {err('password') && (
-            <span className={styles.error}>{formik.errors.password}</span>
+            <span className={styles.error}>
+              <Icon name="error" size={16} />
+              {formik.errors.password}
+            </span>
+          )}
+          {ok('password') && (
+            <span className={styles.success}>
+              <Icon name="success" size={16} />
+              Success password
+            </span>
           )}
         </div>
 

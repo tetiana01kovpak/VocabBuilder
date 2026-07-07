@@ -58,8 +58,9 @@
 
 .save,
 .cancel {
-  height: 60px;
-  padding: 0 60px;
+  height: 56px;
+  min-width: 203px;
+  padding: 0 40px;
   border-radius: var(--radius-btn);
   font-size: 18px;
   font-weight: 700;
@@ -92,6 +93,7 @@
   .save,
   .cancel {
     flex: 1;
+    min-width: 0;
     padding: 0 16px;
   }
 }

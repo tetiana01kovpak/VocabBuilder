@@ -36,7 +36,10 @@ export default function Select({
     return () => document.removeEventListener('mousedown', onClick);
   }, []);
 
-  const selected = options.find((o) => o.value === value);
+  // Empty value renders the placeholder (design: control shows "Categories"),
+  // while the "All" option stays available inside the open list.
+  const selected =
+    value === '' ? undefined : options.find((o) => o.value === value);
 
   return (
     <div className={clsx(styles.wrap, styles[variant])} ref={ref}>

@@ -1,10 +1,16 @@
 import Image from 'next/image';
 import illustration from '@/public/images/auth-illustration.png';
+import Logo from '@/components/Logo/Logo';
 import styles from './AuthLayout.module.css';
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className={styles.page}>
+      <header className={styles.logoBar}>
+        <div className="container">
+          <Logo />
+        </div>
+      </header>
       <div className="container">
         <div className={styles.inner}>
           <div className={styles.card}>{children}</div>

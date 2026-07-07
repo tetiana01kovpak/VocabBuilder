@@ -10,6 +10,7 @@ interface Props {
   value: string;
   placeholder?: string;
   hasError?: boolean;
+  success?: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   onBlur: React.FocusEventHandler<HTMLInputElement>;
 }
@@ -19,6 +20,7 @@ export default function PasswordInput({
   value,
   placeholder = 'Password',
   hasError,
+  success,
   onChange,
   onBlur,
 }: Props) {
@@ -27,7 +29,11 @@ export default function PasswordInput({
   return (
     <div className={styles.inputWrap}>
       <input
-        className={clsx(styles.input, hasError && styles.inputError)}
+        className={clsx(
+          styles.input,
+          hasError && styles.inputError,
+          success && styles.inputSuccess
+        )}
         type={visible ? 'text' : 'password'}
         name={name}
         value={value}

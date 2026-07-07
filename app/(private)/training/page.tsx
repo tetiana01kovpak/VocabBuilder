@@ -82,7 +82,8 @@ export default function TrainingPage() {
     setIndex((i) => i + 1);
   };
 
-  const handleSave = async () => {
+  const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const v = value.trim();
     const finalAnswers = v ? [...answers, buildAnswer(current, v)] : answers;
     const res = await dispatch(sendAnswers(finalAnswers));
@@ -100,32 +101,34 @@ export default function TrainingPage() {
         <div className={styles.progress}>
           <ProgressBar
             value={progress}
-            size={56}
+            size={58}
             stroke={3}
             label={String(tasks.length - answers.length)}
           />
         </div>
 
-        <TrainingRoom
-          task={current}
-          value={value}
-          isLast={isLast}
-          onChange={setValue}
-          onNext={handleNext}
-        />
+        <form onSubmit={handleSave}>
+          <TrainingRoom
+            task={current}
+            value={value}
+            isLast={isLast}
+            onChange={setValue}
+            onNext={handleNext}
+          />
 
-        <div className={styles.buttons}>
-          <button type="button" className={styles.save} onClick={handleSave}>
-            Save
-          </button>
-          <button
-            type="button"
-            className={styles.cancel}
-            onClick={() => router.replace('/dictionary')}
-          >
-            Cancel
-          </button>
-        </div>
+          <div className={styles.buttons}>
+            <button type="submit" className={styles.save}>
+              Save
+            </button>
+            <button
+              type="button"
+              className={styles.cancel}
+              onClick={() => router.replace('/dictionary')}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
       </div>
 
       {results && (

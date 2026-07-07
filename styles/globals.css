@@ -1,27 +1,27 @@
 @font-face {
   font-family: 'Fixel';
-  src: url('/fonts/FixelText-Regular.woff2') format('woff2');
+  src: url('/fonts/FixelDisplay-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Fixel';
-  src: url('/fonts/FixelText-Medium.woff2') format('woff2');
+  src: url('/fonts/FixelDisplay-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Fixel';
-  src: url('/fonts/FixelText-SemiBold.woff2') format('woff2');
+  src: url('/fonts/FixelDisplay-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Fixel';
-  src: url('/fonts/FixelText-Bold.woff2') format('woff2');
+  src: url('/fonts/FixelDisplay-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -64,6 +64,13 @@ button {
 
 input {
   font-family: inherit;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--black);
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 ul,

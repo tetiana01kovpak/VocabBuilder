@@ -1,6 +1,6 @@
 .wrap {
   background: var(--white);
-  border-radius: 8px;
+  border-radius: 15px;
   overflow-x: auto;
   overflow-y: visible;
 }

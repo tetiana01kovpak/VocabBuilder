@@ -34,7 +34,7 @@ export default function TrainingRoom({
         {!isLast && (
           <button type="button" className={styles.next} onClick={onNext}>
             Next
-            <Icon name="arrow-right" size={20} />
+            <Icon name="switch" size={20} className={styles.nextIcon} />
           </button>
         )}
       </div>
