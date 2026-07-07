@@ -15,7 +15,7 @@
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .field {
@@ -86,7 +86,7 @@
 }
 
 .submit {
-  margin-top: 16px;
+  margin-top: 32px;
   height: 60px;
   border-radius: var(--radius-btn);
   background: var(--green);

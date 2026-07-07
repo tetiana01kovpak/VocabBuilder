@@ -15,8 +15,12 @@
   flex-direction: column;
 }
 
-.left {
+.left,
+.right {
   position: relative;
+}
+
+.left {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border-right: 1px solid #dbdbdb;
@@ -25,18 +29,6 @@
 .right {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-}
-
-.langLeft {
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  white-space: nowrap;
 }
 
 .input {
@@ -62,7 +54,8 @@
   align-items: center;
   gap: 8px;
   align-self: flex-start;
-  margin-top: 16px;
+  margin-top: auto;
+  padding-top: 16px;
   font-size: 16px;
   color: var(--black-50);
   transition: color 0.2s ease;
@@ -76,20 +69,18 @@
   color: var(--green);
 }
 
-.right {
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
 .word {
   font-size: 20px;
   font-weight: 500;
   line-height: 1.5;
+  padding-right: 140px;
   color: var(--black);
 }
 
 .lang {
+  position: absolute;
+  top: 22px;
+  right: 22px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -114,7 +105,8 @@
   .right {
     min-height: 180px;
   }
-  .input {
+  .input,
+  .word {
     padding-right: 120px;
   }
 }

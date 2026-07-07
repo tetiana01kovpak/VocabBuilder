@@ -15,7 +15,7 @@
   width: 100%;
   max-width: 628px;
   border-radius: var(--radius-card);
-  padding: 50px;
+  padding: 48px 64px;
 }
 
 .light {

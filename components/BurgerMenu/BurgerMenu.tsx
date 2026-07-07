@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import clsx from 'clsx';
+import illustration from '@/public/images/auth-illustration.png';
 import Icon from '@/components/ui/Icon';
 import UserNav from '@/components/UserNav/UserNav';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
@@ -72,6 +74,13 @@ export default function BurgerMenu({ open, onClose }: Props) {
           Log out
           <Icon name="arrow-right" size={20} />
         </button>
+
+        <Image
+          className={styles.illustration}
+          src={illustration}
+          alt=""
+          sizes="340px"
+        />
       </aside>
     </>
   );

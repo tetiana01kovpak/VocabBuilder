@@ -19,22 +19,26 @@ export default function TrainingRoom({
   onChange,
   onNext,
 }: Props) {
-  const givenIsEnglish = task.task === 'ua';
-  const givenWord = givenIsEnglish ? task.en : task.ua;
+  // Design: Ukrainian side is always left, English side always right.
+  const answerInUkrainian = task.task === 'ua';
+
+  const input = (
+    <textarea
+      className={styles.input}
+      placeholder="Введіть переклад"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+    />
+  );
 
   return (
     <div className={styles.room}>
       <div className={styles.left}>
-        <span className={styles.langLeft}>
-          <Icon name={givenIsEnglish ? 'flag-ua' : 'flag-uk'} size={28} />
-          {givenIsEnglish ? 'Ukrainian' : 'English'}
+        <span className={styles.lang}>
+          <Icon name="flag-ua" size={28} />
+          Ukrainian
         </span>
-        <textarea
-          className={styles.input}
-          placeholder="Введіть переклад"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-        />
+        {answerInUkrainian ? input : <p className={styles.word}>{task.ua}</p>}
         {!isLast && (
           <button type="button" className={styles.next} onClick={onNext}>
             Next
@@ -44,11 +48,11 @@ export default function TrainingRoom({
       </div>
 
       <div className={styles.right}>
-        <p className={styles.word}>{givenWord}</p>
         <span className={styles.lang}>
-          <Icon name={givenIsEnglish ? 'flag-uk' : 'flag-ua'} size={28} />
-          {givenIsEnglish ? 'English' : 'Ukrainian'}
+          <Icon name="flag-uk" size={28} />
+          English
         </span>
+        {answerInUkrainian ? <p className={styles.word}>{task.en}</p> : input}
       </div>
     </div>
   );
