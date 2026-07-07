@@ -37,8 +37,7 @@ export default function WordsPagination({ page, totalPages, onChange }: Props) {
         disabled={page === 1}
         aria-label="First page"
       >
-        <Icon name="arrow-right" size={16} className={styles.doubleLeft} />
-        <Icon name="arrow-right" size={16} className={styles.doubleLeft} />
+        <Icon name="chevron-double-right" size={16} className={styles.left} />
       </button>
       <button
         className={styles.arrow}
@@ -46,7 +45,7 @@ export default function WordsPagination({ page, totalPages, onChange }: Props) {
         disabled={page === 1}
         aria-label="Previous page"
       >
-        <Icon name="arrow-right" size={16} className={styles.left} />
+        <Icon name="chevron-right" size={16} className={styles.left} />
       </button>
 
       {getPages(page, totalPages).map((p, i) =>
@@ -71,7 +70,7 @@ export default function WordsPagination({ page, totalPages, onChange }: Props) {
         disabled={page === totalPages}
         aria-label="Next page"
       >
-        <Icon name="arrow-right" size={16} />
+        <Icon name="chevron-right" size={16} />
       </button>
       <button
         className={styles.arrow}
@@ -79,8 +78,7 @@ export default function WordsPagination({ page, totalPages, onChange }: Props) {
         disabled={page === totalPages}
         aria-label="Last page"
       >
-        <Icon name="arrow-right" size={16} />
-        <Icon name="arrow-right" size={16} />
+        <Icon name="chevron-double-right" size={16} />
       </button>
     </nav>
   );

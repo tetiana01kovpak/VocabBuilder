@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   padding: 40px 0;
 }
 
@@ -44,17 +44,8 @@
   cursor: not-allowed;
 }
 
-.left,
-.doubleLeft {
+.left {
   transform: rotate(180deg);
-}
-
-.doubleLeft {
-  margin: 0 -4px;
-}
-
-.arrow svg {
-  margin: 0 -4px;
 }
 
 .dots {
@@ -63,5 +54,9 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  color: var(--black-50);
+  border-radius: 8px;
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
 }

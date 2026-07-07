@@ -25,6 +25,10 @@ export default function TrainingRoom({
   return (
     <div className={styles.room}>
       <div className={styles.left}>
+        <span className={styles.langLeft}>
+          <Icon name={givenIsEnglish ? 'flag-ua' : 'flag-uk'} size={28} />
+          {givenIsEnglish ? 'Ukrainian' : 'English'}
+        </span>
         <textarea
           className={styles.input}
           placeholder="Введіть переклад"
@@ -34,7 +38,7 @@ export default function TrainingRoom({
         {!isLast && (
           <button type="button" className={styles.next} onClick={onNext}>
             Next
-            <Icon name="switch" size={20} className={styles.nextIcon} />
+            <Icon name="arrow-right" size={20} className={styles.nextIcon} />
           </button>
         )}
       </div>

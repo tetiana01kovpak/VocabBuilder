@@ -1,6 +1,7 @@
 .wrap {
   background: var(--white);
   border-radius: 15px;
+  padding: 18px;
   overflow-x: auto;
   overflow-y: visible;
 }
@@ -14,15 +15,22 @@
 .table th,
 .table td {
   text-align: left;
-  padding: 22px 30px;
-  font-size: 18px;
-  border: 1px solid rgba(18, 20, 23, 0.1);
+  padding: 22px;
+  font-size: 20px;
+  font-weight: 500;
+  background: var(--white);
+  border-bottom: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
   vertical-align: middle;
+}
+
+.table th:last-child,
+.table td:last-child {
+  border-right: none;
 }
 
 .table thead th {
   background: rgba(133, 170, 159, 0.1);
-  font-weight: 500;
 }
 
 .table thead th:first-child {
@@ -31,6 +39,14 @@
 
 .table thead th:last-child {
   border-top-right-radius: 8px;
+}
+
+.table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
 }
 
 .headCell {

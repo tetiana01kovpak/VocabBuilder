@@ -6,7 +6,7 @@
 
 .name,
 .nameLight {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -18,8 +18,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--green);
   flex-shrink: 0;

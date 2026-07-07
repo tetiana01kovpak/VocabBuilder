@@ -10,15 +10,17 @@
   width: 100%;
   height: 100%;
   font-size: 16px;
+  font-weight: 500;
   color: var(--black);
 }
 
 .plain .control {
   min-width: 164px;
-  height: 56px;
-  padding: 0 18px;
+  height: 48px;
+  padding: 0 24px;
+  border: 1px solid var(--black-10);
   border-radius: var(--radius-input);
-  background: var(--white);
+  background: transparent;
 }
 
 .filled .control {

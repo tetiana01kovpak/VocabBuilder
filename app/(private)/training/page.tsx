@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import emptyIllustration from '@/public/images/training-empty.png';
 import toast from 'react-hot-toast';
 import { useAppDispatch } from '@/redux/hooks';
 import { fetchTasks, sendAnswers } from '@/redux/words/operations';
@@ -54,17 +56,30 @@ export default function TrainingPage() {
       <main className={styles.page}>
         <div className="container">
           <div className={styles.empty}>
-            <h2 className={styles.emptyTitle}>
-              You don&apos;t have a single word to learn right now.
-            </h2>
-            <p className={styles.emptyText}>
-              Please create or add a word to start the workout. We want to
-              improve your vocabulary and develop your knowledge, so please share
-              the words you are interested in adding to your study.
-            </p>
-            <Link href="/dictionary?addWord=true" className={styles.addLink}>
-              Add word
-            </Link>
+            <div className={styles.emptyContent}>
+              <h2 className={styles.emptyTitle}>
+                You don&apos;t have a single word to learn right now.
+              </h2>
+              <p className={styles.emptyText}>
+                Please create or add a word to start the workout. We want to
+                improve your vocabulary and develop your knowledge, so please
+                share the words you are interested in adding to your study.
+              </p>
+              <div className={styles.emptyButtons}>
+                <Link href="/dictionary?addWord=true" className={styles.addLink}>
+                  Add word
+                </Link>
+                <Link href="/dictionary" className={styles.cancelLink}>
+                  Cancel
+                </Link>
+              </div>
+            </div>
+            <Image
+              className={styles.emptyImage}
+              src={emptyIllustration}
+              alt="Report with A+ grade"
+              sizes="(max-width: 767px) 60vw, 450px"
+            />
           </div>
         </div>
       </main>
